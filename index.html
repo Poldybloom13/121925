@@ -37,6 +37,19 @@
 
   .button:hover {
     background-color: #ff1493;
+
+  .hero-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+
   }
 </style>
 
@@ -45,8 +58,25 @@
 
   <img src="ellie1.png" alt="Us" class="hero-image">
 
+  <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:24px; color:#ff69b4;">
+  ⬇ Scroll ⬇
+</div>
+
+
   <div class="links">
-    <a href="letter.html" class="button">Read My Letter 💌</a>
+ <a href="#" class="button" onclick="checkPassword()">Read My Letter 💌</a>
+
+<script>
+function checkPassword() {
+  let password = prompt("The date we had Pho (M/D/Y)");
+  if(password && password.toLowerCase() === "12192025") {
+    window.location.href = "letter.html";
+  } else {
+    alert("Poser");
+  }
+}
+</script>
+
 
     <a href="https://open.spotify.com/playlist/5nonIcnIQER1v0NrpVMXuA?si=b0d8b5829e344e3d&pt=b6e6c98052a585a018134041722afebb" 
        class="button" target="_blank">
