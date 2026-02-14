@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
   body {
     margin: 0;
@@ -14,8 +15,14 @@
   .hero-image {
     width: 100%;
     height: 100vh;
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
 
   .links {
@@ -32,67 +39,51 @@
     border-radius: 12px;
     text-decoration: none;
     transition: 0.3s ease;
+    cursor: pointer;
   }
 
   .button:hover {
     background-color: #ff1493;
-
-  .hero-image {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  display: block;
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-
+    transform: scale(1.05);
   }
 </style>
-
 </head>
+
 <body>
 
-  <img src="ellie1.png" alt="Us" class="hero-image">
+<img src="ellie1.png" alt="Us" class="hero-image">
 
+<div class="links">
 
+  <!-- Letter Button -->
+  <a class="button" onclick="checkLetterPassword()">Your Letter 💌</a>
 
+  <!-- Playlist Button -->
+  <a class="button" onclick="checkPlaylistPassword()">Your Playlist 🎶</a>
 
-  <div class="links">
- <a href="#" class="button" onclick="checkPassword()">Your Letter </a>
+</div>
 
 <script>
-function checkPassword() {
-  let password = prompt("Pho Date (DD/MM/YYYY");
-  if(password && password.toLowerCase() === "19122025") {
+function checkLetterPassword() {
+  let password = prompt("Pho Date (DDMMYYYY)");
+  if (password === "19122025") {
     window.location.href = "letter.html";
   } else {
     alert("Are you really Ellie?");
   }
 }
-</script>
 
-    <a href="https://open.spotify.com/playlist/5nonIcnIQER1v0NrpVMXuA?si=b0d8b5829e344e3d&pt=b6e6c98052a585a018134041722afebb" 
-       class="button" target="_blank">
-       Your Playlist
-    </a>
-
-<script> 
-function checkPassword() {
+function checkPlaylistPassword() {
   let password = prompt("My preschool teacher");
-  if(password && password.toLowerCase() === "Mrs. Robin") {
-    window.location.href = ADD
+  if (password && password.toLowerCase() === "mrs robin") {
+    window.open("https://open.spotify.com/playlist/5nonIcnIQER1v0NrpVMXuA?si=b0d8b5829e344e3d&pt=b6e6c98052a585a018134041722afebb", "_blank");
   } else {
-      alert("Tsk tsk");
-    }
+    alert("Tsk tsk.");
   }
+}
 </script>
-    
-  </div>
 
 </body>
-
 </html>
+
 
